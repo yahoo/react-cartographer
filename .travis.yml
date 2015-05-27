@@ -10,3 +10,5 @@ node_js:
   - "0.10"
 after_success:
   - "npm run devtest"
+  - "npm run cover"
+  - "cat artifacts/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

@@ -3,7 +3,12 @@
 react-cartographer 
 =========
 
+[![npm version](https://badge.fury.io/js/react-cartographer.svg)](http://badge.fury.io/js/react-cartographer)
 [![Build Status](https://travis-ci.org/yahoo/react-cartographer.svg?branch=master)](https://travis-ci.org/yahoo/react-cartographer)
+[![Dependency Status](https://david-dm.org/yahoo/react-cartographer.svg)](https://david-dm.org/yahoo/react-cartographer)
+[![devDependency Status](https://david-dm.org/yahoo/react-cartographer/dev-status.svg)](https://david-dm.org/yahoo/react-cartographer#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/yahoo/react-cartographer/badge.svg)](https://coveralls.io/r/yahoo/react-cartographer)
+
 
 Generic component for displaying maps using (Yahoo, Google or Bing) as provider.
 
@@ -13,8 +18,8 @@ $ npm install --save react-cartographer
 
 ## Links
 * [Google Map Documentation](https://developers.google.com/maps/documentation/staticmaps/)
-* [Yahoo Map Documenation] (https://developer.yahoo.com/maps/)
-* [Bing Map Documentation] (https://msdn.microsoft.com/en-us/library/ff701724.aspx)
+* [Yahoo Map Documenation](https://developer.yahoo.com/maps/)
+* [Bing Map Documentation](https://msdn.microsoft.com/en-us/library/ff701724.aspx)
 
 ## Features
 * Map Image for location provided (address, city, state, country) or (latitude and longitude)
