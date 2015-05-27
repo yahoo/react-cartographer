@@ -3,6 +3,8 @@
 react-cartographer 
 =========
 
+[![Build Status](https://travis-ci.org/yahoo/react-cartographer.svg?branch=master)](https://travis-ci.org/yahoo/react-cartographer)
+
 Generic component for displaying maps using (Yahoo, Google or Bing) as provider.
 
 ```bash
