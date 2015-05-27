@@ -1,0 +1,35 @@
+{
+    "yahoo": {
+        "name": "yahoo",
+        "protocol": "http",
+        "host": "gws2.maps.yahoo.com",
+        "path": "/MapImage/",
+        "flags": "PMJ",
+        "imi": "1-h-gws-2x",
+        "radius": "700",
+        "resultCount": 1
+    },
+    "google": {
+        "name": "google",
+        "protocol": "https",
+        "host": "maps.googleapis.com",
+        "path": "/maps/api/staticmap",
+        "mapType": "roadmap",
+        "markerColor": "color:purple",
+        "markerLabel": "label:1"
+    },
+    "bing": {
+        "name": "bing",
+        "protocol": "https",
+        "host": "dev.virtualearth.net",
+        "path": "/REST/V1/Imagery/Map/Road/"
+    },
+    "mapQuest": {
+        "name": "mapQuest",
+        "protocol": "https",
+        "host": "www.mapquestapi.com",
+        "path": "/staticmap/v4/getplacemap",
+        "mapType": "map",
+        "icon": "red_1-1"
+    }
+}

@@ -1,0 +1,25 @@
+<!--
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Map Demo using Yahoo / Google Maps</title>
+    <!-- include react -->
+    <script src="./node_modules/react/dist/react-with-addons.js"></script>
+</head>
+<body>
+<div id="content">
+    <!-- this is where the root react component will get rendered -->
+</div>
+<!-- include the webpack-dev-server script so our scripts get reloaded when we make a change -->
+<!-- we'll run the webpack dev server on port 8090, so make sure it is correct -->
+<script src="http://localhost:8090/webpack-dev-server.js"></script>
+<!-- include the bundle that contains all our scripts, produced by webpack -->
+<!-- the bundle is served by the webpack-dev-server, so serve it also from localhost:8090 -->
+<script type="text/javascript" src="http://localhost:8090/assets/bundle_output.js"></script>
+</body>
+</html>
