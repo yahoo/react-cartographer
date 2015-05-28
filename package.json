@@ -14,7 +14,7 @@
     "dev": "webpack-dev-server --progress --colors --port 8090",
     "test": "jenkins-mocha tests/unit/*",
     "devtest": "mocha tests/unit/* --reporter nyan",
-    "cover": "istanbul cover --dir ARTIFACTS_DIR -- _mocha tests/unit/*.js --reporter spec"
+    "cover": "istanbul cover --dir artifacts -- _mocha tests/unit/*.js --reporter spec"
   },
   "dependencies": {
     "url": "^0.10.0",
@@ -25,6 +25,8 @@
     "react": "<=0.13.x"
   },
   "devDependencies": {
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.11",
     "react": "<=0.13.x",
     "debug": "^2.0.0",
     "jenkins-mocha": "^2.2",
