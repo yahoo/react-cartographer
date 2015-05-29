@@ -14,7 +14,7 @@
     "dev": "webpack-dev-server --progress --colors --port 8090",
     "test": "jenkins-mocha tests/unit/*",
     "devtest": "mocha tests/unit/* --reporter nyan",
-    "cover": "istanbul cover --dir artifacts -- _mocha tests/unit/*.js --reporter spec"
+    "cover": "node node_modules/istanbul/lib/cli.js cover --dir artifacts -- ./node_modules/mocha/bin/_mocha tests/ --recursive --reporter spec"
   },
   "dependencies": {
     "url": "^0.10.0",
