@@ -1,6 +1,6 @@
 {
   "name": "react-cartographer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generic React component for displaying static maps using Yahoo, Google or Bing as a map provider.",
   "author": "Edmond Chow <echow23@yahoo-inc.com>",
   "repository": {
@@ -14,17 +14,17 @@
     "dev": "webpack-dev-server --progress --colors --port 8090",
     "test": "jenkins-mocha tests/unit/*",
     "devtest": "mocha tests/unit/* --reporter nyan",
-    "cover": "node node_modules/istanbul/lib/cli.js cover --dir artifacts -- ./node_modules/mocha/bin/_mocha tests/ --recursive --reporter spec"
+    "cover": "node node_modules/istanbul/lib/cli.js cover --dir artifacts -- ./node_modules/mocha/bin/_mocha tests/ --recursive --reporter spec",
+    "prepublish": "grunt babel"
   },
   "dependencies": {
     "url": "^0.10.0",
     "lodash": "^3.8.0",
-    "urlencode": "^1.0.0"
-  },
-  "peerDependencies": {
-    "react": "<=0.13.x"
+    "urlencode": "^1.0.0",
+    "react": "^0.13"
   },
   "devDependencies": {
+    "babel-loader": "^5.3",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.11",
     "react": "<=0.13.x",
@@ -39,12 +39,12 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-nodemon": "^0.4.0",
+    "grunt-babel": "^5.0",
     "grunt-webpack": "^1.0.8",
     "json-loader": "^0.5.1",
     "nodemon": "^1.2.1",
     "webpack": "^1.4.12",
     "webpack-dev-server": "^1.6.5",
-    "jsx-loader": "~0.11.2",
     "http-server": "~0.7.1"
   },
   "precommit": [

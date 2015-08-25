@@ -16,11 +16,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.json/, loader: 'json-loader' },
-            {
-                // tell webpack to use jsx-loader for all *.jsx files
-                test: /\.jsx$/,
-                loader: 'jsx-loader?insertPragma=React.DOM&harmony'
-            }
+            { test: /\.jsx$/, loader: 'babel-loader' }
         ]
     },
     plugins: [

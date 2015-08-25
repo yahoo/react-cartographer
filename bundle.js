@@ -5,6 +5,6 @@
 
 module.exports = {
     components: {
-        Map: require('./components/Map.jsx')
+        Map: require('./components-dist/Map')
     }
 };
