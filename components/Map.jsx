@@ -5,10 +5,10 @@
 
 'use strict';
 
-var React           = require('react');
+var React           = require('react/addons');
 
 // Mixins
-var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
+var PureRenderMixin = React.addons.PureRenderMixin;
 
 // Factory
 var factory = require('../lib/mapLocationFactory');

@@ -5,3 +5,4 @@ shelljs_*
 .idea
 .DS_Store
 build
+components-dist/

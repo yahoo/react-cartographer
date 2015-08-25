@@ -8,6 +8,13 @@ var webpack = require('webpack');
 module.exports = function (grunt) {
     grunt.initConfig({
         clean: ['./build'],
+        babel: {
+            dist: {
+                files: {
+                    'components-dist/Map.js': 'components/Map.jsx'
+                }
+            }
+        },
         concurrent: {
             dev: ['nodemon:dev', 'webpack:dev'],
             options: {
@@ -37,10 +44,7 @@ module.exports = function (grunt) {
                     loaders: [
                         { test: /\.css$/, loader: 'style!css' },
                         { test: /\.json/, loader: 'json-loader' },
-                        {
-                            test: /\.jsx$/,
-                            loader: 'jsx-loader?insertPragma=React.DOM&harmony'
-                        }
+                        { test: /\.jsx$/, loader: 'babel-loader' },
                     ]
                 },
                 plugins: [
@@ -63,6 +67,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-webpack');
+    grunt.loadNpmTasks('grunt-babel');
 
     grunt.registerTask('default', ['clean', 'concurrent:dev']);
 };
