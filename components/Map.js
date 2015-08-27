@@ -5,22 +5,16 @@
 
 'use strict';
 
-var React           = require('react/addons');
+import React from 'react';
 
 // Mixins
-var PureRenderMixin = React.addons.PureRenderMixin;
+// var PureRenderMixin = React.addons.PureRenderMixin;
 
 // Factory
 var factory = require('../lib/mapLocationFactory');
 
-module.exports = React.createClass({
-    displayName: 'Map',
-    mixins: [PureRenderMixin],
-
-    /**
-     * Prop Types
-     */
-    propTypes: {
+export class Map extends React.Component {
+    static propTypes = {
         providerKey: React.PropTypes.string.isRequired,
         provider: React.PropTypes.oneOf(['yahoo', 'google', 'bing']),
         mapId: React.PropTypes.string.isRequired,
@@ -33,23 +27,17 @@ module.exports = React.createClass({
         height: React.PropTypes.number.isRequired,
         width: React.PropTypes.number.isRequired,
         zoom: React.PropTypes.number
-    },
+    };
 
-    /**
-     * Default Prop Types
-     * @returns {{height: number, width: number, zoom: number}}
-     */
-    getDefaultProps: function () {
-        return {
-            provider: 'yahoo',
-            mapId: 'map',
-            height: 270,
-            width: 580,
-            zoom: 10
-        }
-    },
+    static defaultProps = {
+        provider: 'yahoo',
+        mapId: 'map',
+        height: 270,
+        width: 580,
+        zoom: 10
+    };
 
-    getLocation: function() {
+    getLocation() {
         return factory.getMap({
             providerKey: this.props.providerKey,
             provider: this.props.provider,
@@ -63,9 +51,9 @@ module.exports = React.createClass({
             width: this.props.width,
             zoom: this.props.zoom
         });
-    },
+    }
 
-    render: function () {
+    render() {
         var location = this.getLocation();
         var locationText;
 
@@ -85,4 +73,4 @@ module.exports = React.createClass({
             </div>
         );
     }
-});
+};

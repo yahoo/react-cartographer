@@ -6,7 +6,7 @@
 'use strict';
 
 var React   = require('react/addons');
-var Map     = require('./components/Map.jsx');
+var Map     = require('./components/Map.js');
 
 React.render(
     <div>

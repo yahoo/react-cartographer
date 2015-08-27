@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         babel: {
             dist: {
                 files: {
-                    'components-dist/Map.js': 'components/Map.jsx'
+                    'components-dist/Map.js': 'components/Map.js'
                 }
             }
         },
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                     loaders: [
                         { test: /\.css$/, loader: 'style!css' },
                         { test: /\.json/, loader: 'json-loader' },
-                        { test: /\.jsx$/, loader: 'babel-loader' },
+                        { test: /\.jsx$/, loader: 'babel-loader' }
                     ]
                 },
                 plugins: [
