@@ -44,7 +44,11 @@ module.exports = function (grunt) {
                     loaders: [
                         { test: /\.css$/, loader: 'style!css' },
                         { test: /\.json/, loader: 'json-loader' },
-                        { test: /\.jsx$/, loader: 'babel-loader' }
+                        {
+                            test: /\.(js|jsx)$/,
+                            exclude: /node_modules/,
+                            loader: 'babel-loader'
+                        }
                     ]
                 },
                 plugins: [

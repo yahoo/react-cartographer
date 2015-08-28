@@ -8,18 +8,19 @@
 
 'use strict';
 
-var expect      = require('chai').expect;
+import {expect} from 'chai';
+import GoogleMapService from '../../lib/googleMap';
 
-describe('GoogleMapService', function () {
-    var service = require('../../lib/googleMap');
+describe('GoogleMapService', () => {
+    const service = new GoogleMapService();
 
-    it('#name is "google"', function() {
+    it('#name is "google"', () => {
         expect(service.name).to.equal('google');
     });
 
-    describe('#read', function() {
-        it('should return the correct locationLink and locationText', function () {
-            var result = service.getMap({
+    describe('#read', () => {
+        it('should return the correct locationLink and locationText', () => {
+            const result = service.getMap({
                 mapId: 'mapId',
                 line1: 'line1',
                 line2: 'line2',

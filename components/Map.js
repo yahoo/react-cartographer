@@ -6,14 +6,12 @@
 'use strict';
 
 import React from 'react';
-
-// Mixins
-// var PureRenderMixin = React.addons.PureRenderMixin;
+import MapLocationFactory from '../lib/mapLocationFactory';
 
 // Factory
-var factory = require('../lib/mapLocationFactory');
+var factory = new MapLocationFactory();
 
-export class Map extends React.Component {
+export default class Map extends React.Component {
     static propTypes = {
         providerKey: React.PropTypes.string.isRequired,
         provider: React.PropTypes.oneOf(['yahoo', 'google', 'bing']),
@@ -37,7 +35,7 @@ export class Map extends React.Component {
         zoom: 10
     };
 
-    getLocation() {
+    getLocation () {
         return factory.getMap({
             providerKey: this.props.providerKey,
             provider: this.props.provider,
@@ -53,16 +51,16 @@ export class Map extends React.Component {
         });
     }
 
-    render() {
-        var location = this.getLocation();
-        var locationText;
+    render () {
+        const location = this.getLocation();
+        let locationText;
 
         if (!location.data || !location.data.locationLink) {
             return null;
         }
 
         locationText = location.data.locationText;
-        var style = {
+        const style = {
             width: this.props.width,
             height: this.props.height
         };

@@ -8,18 +8,19 @@
 
 'use strict';
 
-var expect      = require('chai').expect;
+import {expect} from 'chai';
+import YahooMapService from '../../lib/yahooMap';
 
-describe('YahooMapService', function () {
-    var service = require('../../lib/yahooMap');
+describe('YahooMapService', () => {
+    const service = new YahooMapService();
 
-    it('#name is "yahoo"', function() {
+    it('#name is "yahoo"', () => {
         expect(service.name).to.equal('yahoo');
     });
 
-    describe('#read', function() {
-        it('should handle correct data from service', function () {
-            var result = service.getMap({
+    describe('#read', () => {
+        it('should handle correct data from service', () => {
+            const result = service.getMap({
                 mapId: 'map',
                 line1: 'line1',
                 line2: 'line2',
