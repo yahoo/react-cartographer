@@ -13,7 +13,7 @@
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8090",
     "test": "jenkins-mocha tests/unit/*",
-    "devtest": "mocha tests/unit/* --reporter nyan",
+    "devtest": "mocha  --compilers js:babel/register tests/unit/* --reporter nyan",
     "cover": "node node_modules/istanbul/lib/cli.js cover --dir artifacts -- ./node_modules/mocha/bin/_mocha tests/ --recursive --reporter spec",
     "prepublish": "grunt babel"
   },
