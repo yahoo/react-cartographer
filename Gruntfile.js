@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         babel: {
             dist: {
                 files: {
-                    'components-dist/Map.js': 'components/Map.js'
+                    'components-dist/Map.js': 'components/Map.jsx'
                 }
             }
         },
