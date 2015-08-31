@@ -16,7 +16,7 @@ const _ = {
     identity: require('lodash/utility/identity')
 };
 
-import {mapQuest as config} from '../config/config.json';
+import {mapQuest as config} from '../../config/config.json';
 import utils from 'url';
 
 export default class MapQuestService {

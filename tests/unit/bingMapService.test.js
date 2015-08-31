@@ -9,7 +9,7 @@
 'use strict';
 
 import {expect} from 'chai';
-import BingMapService from '../../lib/bingMap';
+import BingMapService from '../../src/lib/bingMap';
 
 describe('BingMapService', () => {
     const service = new BingMapService();

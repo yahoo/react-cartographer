@@ -9,7 +9,7 @@
 'use strict';
 
 import {expect} from 'chai';
-import YahooMapService from '../../lib/yahooMap';
+import YahooMapService from '../../src/lib/yahooMap';
 
 describe('YahooMapService', () => {
     const service = new YahooMapService();

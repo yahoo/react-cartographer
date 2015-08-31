@@ -6,3 +6,4 @@ shelljs_*
 .DS_Store
 build
 components-dist/
+lib/

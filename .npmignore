@@ -5,3 +5,5 @@
 lcov-*
 xunit*
 components/
+src/
+.idea*

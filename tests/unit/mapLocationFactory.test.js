@@ -9,7 +9,7 @@
 'use strict';
 
 import {expect} from 'chai';
-import MapLocationFactory from '../../lib/mapLocationFactory.js';
+import MapLocationFactory from '../../src/lib/mapLocationFactory.js';
 
 describe('MapLocationFactory', () => {
     var factory = new MapLocationFactory();

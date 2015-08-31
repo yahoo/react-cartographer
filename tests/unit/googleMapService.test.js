@@ -9,7 +9,7 @@
 'use strict';
 
 import {expect} from 'chai';
-import GoogleMapService from '../../lib/googleMap';
+import GoogleMapService from '../../src/lib/googleMap';
 
 describe('GoogleMapService', () => {
     const service = new GoogleMapService();

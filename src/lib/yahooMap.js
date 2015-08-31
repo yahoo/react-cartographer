@@ -6,8 +6,8 @@
 'use strict';
 
 /*
- * Bing MapImage Service
- * @class BingMapService
+ * Yahoo MapImage Service
+ * @class GoogleMapService
  */
 
 const _ = {
@@ -16,52 +16,54 @@ const _ = {
     identity: require('lodash/utility/identity')
 };
 
-import {bing as config} from '../config/config.json';
+import {yahoo as config} from '../../config/config.json';
 import utils from 'url';
-import encode from 'urlencode';
 
-export default class BingMapService {
+export default class YahooMapService {
     get name() {
         return config.name;
     }
 
     /**
      * Get the map location details for the address provided in the params
+     * Map Location details include: geo coordinates and map url to display
      *
      * @param {Object} params
      * @returns {{mapId: (*|string|string|string|string), data: {locationLink: *, locationText: string}}}
      */
     getMap (params) {
-        let locationText;
         let location;
-        let pushpin;
         let url;
+        const query = _.pick({
+            appid: params.providerKey,
+            imw: params.width,
+            imh: params.height,
+            imi: config.imi,
+            radius: config.radius,
+            zoom: params.zoom
+        }, _.identity);
 
         if (isFinite(params.longitude) && isFinite(params.latitude)) {
-            pushpin = location = locationText = [params.latitude, params.longitude].join(',');
-            if (isFinite(params.zoom)) {
-                location = [location, params.zoom].join('/');
-            }
+            location = [params.latitude, params.longitude].join(',');
+            query.clat = params.latitude;
+            query.clon = params.longitude;
         } else {
-            location = locationText = [params.line1, params.line2, params.line3].join(',');
+            location = [params.line1, params.line2, params.line3].join(',');
+            query.q = location;
         }
 
         url = utils.format({
             protocol: config.protocol,
             hostname: config.host,
-            pathname: config.path + encode(location),
-            query: _.pick({
-                mapSize: [params.width, params.height].join(','),
-                key: params.providerKey,
-                pushpin: pushpin
-            }, _.identity)
+            pathname: config.path,
+            query: query
         });
 
         return {
             mapId: params.mapId,
             data: {
                 locationLink: url,
-                locationText: locationText
+                locationText: location
             }
         };
     }

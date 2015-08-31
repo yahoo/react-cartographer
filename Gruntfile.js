@@ -7,12 +7,16 @@ var webpack = require('webpack');
 
 module.exports = function (grunt) {
     grunt.initConfig({
-        clean: ['./build'],
+        clean: ['./build', './lib'],
         babel: {
             dist: {
-                files: {
-                    'components-dist/Map.js': 'components/Map.jsx'
-                }
+                files: [{
+                    expand: true,
+                    cwd: 'lib',
+                    src: ['src/**.jsx', 'src/**.js', 'src/**.json'],
+                    dest: 'lib',
+                    ext: '.js'
+                }]
             }
         },
         concurrent: {

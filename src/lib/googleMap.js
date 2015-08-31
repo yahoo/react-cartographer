@@ -16,7 +16,7 @@ const _ = {
     identity: require('lodash/utility/identity')
 };
 
-import {google as config} from '../config/config.json';
+import {google as config} from '../../config/config.json';
 import utils from 'url';
 
 export default class GoogleMapService {
