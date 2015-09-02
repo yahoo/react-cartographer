@@ -5,22 +5,14 @@
 
 'use strict';
 
-var React           = require('react/addons');
-
-// Mixins
-var PureRenderMixin = React.addons.PureRenderMixin;
+import React from 'react';
+import MapLocationFactory from '../lib/mapLocationFactory';
 
 // Factory
-var factory = require('../lib/mapLocationFactory');
+const factory = new MapLocationFactory();
 
-module.exports = React.createClass({
-    displayName: 'Map',
-    mixins: [PureRenderMixin],
-
-    /**
-     * Prop Types
-     */
-    propTypes: {
+export default class Map extends React.Component {
+    static propTypes = {
         providerKey: React.PropTypes.string.isRequired,
         provider: React.PropTypes.oneOf(['yahoo', 'google', 'bing']),
         mapId: React.PropTypes.string.isRequired,
@@ -33,23 +25,17 @@ module.exports = React.createClass({
         height: React.PropTypes.number.isRequired,
         width: React.PropTypes.number.isRequired,
         zoom: React.PropTypes.number
-    },
+    }
 
-    /**
-     * Default Prop Types
-     * @returns {{height: number, width: number, zoom: number}}
-     */
-    getDefaultProps: function () {
-        return {
-            provider: 'yahoo',
-            mapId: 'map',
-            height: 270,
-            width: 580,
-            zoom: 10
-        }
-    },
+    static defaultProps = {
+        provider: 'yahoo',
+        mapId: 'map',
+        height: 270,
+        width: 580,
+        zoom: 10
+    }
 
-    getLocation: function() {
+    getLocation () {
         return factory.getMap({
             providerKey: this.props.providerKey,
             provider: this.props.provider,
@@ -63,18 +49,18 @@ module.exports = React.createClass({
             width: this.props.width,
             zoom: this.props.zoom
         });
-    },
+    }
 
-    render: function () {
-        var location = this.getLocation();
-        var locationText;
+    render () {
+        const location = this.getLocation();
+        let locationText;
 
         if (!location.data || !location.data.locationLink) {
             return null;
         }
 
         locationText = location.data.locationText;
-        var style = {
+        const style = {
             width: this.props.width,
             height: this.props.height
         };
@@ -85,4 +71,4 @@ module.exports = React.createClass({
             </div>
         );
     }
-});
+};

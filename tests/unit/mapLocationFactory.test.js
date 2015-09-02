@@ -8,14 +8,15 @@
 
 'use strict';
 
-var expect      = require('chai').expect;
+import {expect} from 'chai';
+import MapLocationFactory from '../../src/lib/mapLocationFactory.js';
 
-describe('MapLocationFactory', function () {
-    var factory = require('../../lib/mapLocationFactory');
+describe('MapLocationFactory', () => {
+    var factory = new MapLocationFactory();
 
-    describe('#getMap', function() {
-        it('should return the correct locationLink and locationText for Google', function () {
-            var result = factory.getMap({
+    describe('#getMap', () => {
+        it('should return the correct locationLink and locationText for Google', () => {
+            const result = factory.getMap({
                 provider: 'google',
                 mapId: 'mapId',
                 line1: 'line1',
@@ -31,8 +32,8 @@ describe('MapLocationFactory', function () {
                 '&markers=color%3Apurple%7Clabel%3A1%7Cline1%2Cline2%2Cline3');
         });
 
-        it('should return the correct locationLink and locationText for Google using lat/longitude', function () {
-            var result = factory.getMap({
+        it('should return the correct locationLink and locationText for Google using lat/longitude', () => {
+            const result = factory.getMap({
                 provider: 'google',
                 mapId: 'mapId',
                 latitude: 2,
@@ -47,8 +48,8 @@ describe('MapLocationFactory', function () {
                 '&markers=color%3Apurple%7Clabel%3A1%7C2%2C3');
         });
 
-        it('should return the correct locationLink and locationText for Yahoo', function () {
-            var result = factory.getMap({
+        it('should return the correct locationLink and locationText for Yahoo', () => {
+            const result = factory.getMap({
                 provider: 'yahoo',
                 mapId: 'map',
                 line1: 'line1',
@@ -66,8 +67,8 @@ describe('MapLocationFactory', function () {
                 '?appid=yahoo&imw=300&imh=500&imi=1-h-gws-2x&radius=700&zoom=10&q=line1%2Cline2%2Cline3');
         });
 
-        it('should return the correct locationLink and locationText for Yahoo using lat/longitude', function () {
-            var result = factory.getMap({
+        it('should return the correct locationLink and locationText for Yahoo using lat/longitude', () => {
+            const result = factory.getMap({
                 provider: 'yahoo',
                 mapId: 'map',
                 latitude: 2,
@@ -84,8 +85,8 @@ describe('MapLocationFactory', function () {
                 '?appid=yahoo&imw=300&imh=500&imi=1-h-gws-2x&radius=700&zoom=10&clat=2&clon=3');
         });
 
-        it('should call Bing Map Service', function() {
-            var result = factory.getMap({
+        it('should call Bing Map Service', () => {
+            const result = factory.getMap({
                 provider: 'bing',
                 mapId: 'map',
                 line1: 'line1',
@@ -101,8 +102,8 @@ describe('MapLocationFactory', function () {
                 'line1%2Cline2%2Cline3?mapSize=200%2C300&key=key');
         });
 
-        it('should call Bing Map Service', function() {
-            var result = factory.getMap({
+        it('should call Bing Map Service', () => {
+            const result = factory.getMap({
                 provider: 'bing',
                 mapId: 'map',
                 latitude: 2,

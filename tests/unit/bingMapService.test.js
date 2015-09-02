@@ -8,18 +8,19 @@
 
 'use strict';
 
-var expect      = require('chai').expect;
+import {expect} from 'chai';
+import BingMapService from '../../src/lib/bingMap';
 
-describe('BingMapService', function () {
-    var service = require('../../lib/bingMap');
+describe('BingMapService', () => {
+    const service = new BingMapService();
 
-    it('#name is "bing"', function() {
+    it('#name is "bing"', () => {
         expect(service.name).to.equal('bing');
     });
 
-    describe('#read', function() {
-        it('should return the correct locationLink and locationText', function () {
-            var result = service.getMap({
+    describe('#read', () => {
+        it('should return the correct locationLink and locationText', () => {
+            const result = service.getMap({
                 mapId: 'mapId',
                 line1: 'line1',
                 line2: 'line2',

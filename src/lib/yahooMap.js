@@ -6,49 +6,57 @@
 'use strict';
 
 /*
- * Google MapImage Service
+ * Yahoo MapImage Service
  * @class GoogleMapService
  */
 
-var _ = {
+const _ = {
     // Collection
     pick: require('lodash/object/pick'),
     identity: require('lodash/utility/identity')
 };
 
-var config  = require('../config/config.json').google;
-var utils   = require('url');
+import {yahoo as config} from '../../config/config.json';
+import utils from 'url';
 
-module.exports = {
-    name: config.name,
+export default class YahooMapService {
+    get name() {
+        return config.name;
+    }
 
     /**
      * Get the map location details for the address provided in the params
+     * Map Location details include: geo coordinates and map url to display
      *
      * @param {Object} params
      * @returns {{mapId: (*|string|string|string|string), data: {locationLink: *, locationText: string}}}
      */
-    getMap: function(params) {
-        var location;
+    getMap (params) {
+        let location;
+        let url;
+        const query = _.pick({
+            appid: params.providerKey,
+            imw: params.width,
+            imh: params.height,
+            imi: config.imi,
+            radius: config.radius,
+            zoom: params.zoom
+        }, _.identity);
 
         if (isFinite(params.longitude) && isFinite(params.latitude)) {
             location = [params.latitude, params.longitude].join(',');
+            query.clat = params.latitude;
+            query.clon = params.longitude;
         } else {
             location = [params.line1, params.line2, params.line3].join(',');
+            query.q = location;
         }
 
-        var url = utils.format({
+        url = utils.format({
             protocol: config.protocol,
             hostname: config.host,
             pathname: config.path,
-            query: _.pick({
-                center: location,
-                size: [params.width, params.height].join('x'),
-                mapType: config.mapType,
-                markers: [config.markerColor, config.markerLabel, location].join('|'),
-                zoom: params.zoom,
-                key: params.providerKey
-            }, _.identity)
+            query: query
         });
 
         return {
@@ -59,4 +67,4 @@ module.exports = {
             }
         };
     }
-};
+}

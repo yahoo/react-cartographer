@@ -4,4 +4,4 @@
 /tests/
 lcov-*
 xunit*
-components/
+.idea*

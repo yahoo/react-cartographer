@@ -10,25 +10,23 @@
  * @class BingMapService
  */
 
-var _ = {
+const _ = {
     // Collection
     pick: require('lodash/object/pick'),
     identity: require('lodash/utility/identity')
 };
 
-var config  = require('../config/config.json').mapQuest;
-var utils   = require('url');
+import {mapQuest as config} from '../../config/config.json';
+import utils from 'url';
 
-module.exports = {
-    name: config.name,
-
+export default class MapQuestService {
     /**
      * Get the map location details for the address provided in the params
      *
      * @param {Object} params
      * @returns {{mapId: (*|string|string|string|string), data: {locationLink: *, locationText: string}}}
      */
-    getMap: function (params) {
+    getMap (params) {
         var location = [params.line1, params.line2, params.line3].join(',');
         var url = utils.format({
             protocol: config.protocol,
@@ -51,4 +49,4 @@ module.exports = {
             }
         }
     }
-};
+}

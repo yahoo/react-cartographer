@@ -10,18 +10,20 @@
  * @class BingMapService
  */
 
-var _ = {
+const _ = {
     // Collection
     pick: require('lodash/object/pick'),
     identity: require('lodash/utility/identity')
 };
 
-var config  = require('../config/config.json').bing;
-var utils   = require('url');
-var encode  = require('urlencode');
+import {bing as config} from '../../config/config.json';
+import utils from 'url';
+import encode from 'urlencode';
 
-module.exports = {
-    name: config.name,
+export default class BingMapService {
+    get name() {
+        return config.name;
+    }
 
     /**
      * Get the map location details for the address provided in the params
@@ -29,10 +31,11 @@ module.exports = {
      * @param {Object} params
      * @returns {{mapId: (*|string|string|string|string), data: {locationLink: *, locationText: string}}}
      */
-    getMap: function(params) {
-        var locationText;
-        var location;
-        var pushpin;
+    getMap (params) {
+        let locationText;
+        let location;
+        let pushpin;
+        let url;
 
         if (isFinite(params.longitude) && isFinite(params.latitude)) {
             pushpin = location = locationText = [params.latitude, params.longitude].join(',');
@@ -43,7 +46,7 @@ module.exports = {
             location = locationText = [params.line1, params.line2, params.line3].join(',');
         }
 
-        var url = utils.format({
+        url = utils.format({
             protocol: config.protocol,
             hostname: config.host,
             pathname: config.path + encode(location),
@@ -62,4 +65,4 @@ module.exports = {
             }
         };
     }
-};
+}
