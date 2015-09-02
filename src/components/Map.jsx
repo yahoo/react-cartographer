@@ -9,7 +9,7 @@ import React from 'react';
 import MapLocationFactory from '../lib/mapLocationFactory';
 
 // Factory
-var factory = new MapLocationFactory();
+const factory = new MapLocationFactory();
 
 export default class Map extends React.Component {
     static propTypes = {
@@ -25,7 +25,7 @@ export default class Map extends React.Component {
         height: React.PropTypes.number.isRequired,
         width: React.PropTypes.number.isRequired,
         zoom: React.PropTypes.number
-    };
+    }
 
     static defaultProps = {
         provider: 'yahoo',
@@ -33,7 +33,7 @@ export default class Map extends React.Component {
         height: 270,
         width: 580,
         zoom: 10
-    };
+    }
 
     getLocation () {
         return factory.getMap({
