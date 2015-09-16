@@ -3,7 +3,7 @@
         "name": "yahoo",
         "protocol": "http",
         "host": "gws2.maps.yahoo.com",
-        "path": "/MapImage/",
+        "path": "/MapImage",
         "flags": "PMJ",
         "imi": "1-h-gws-2x",
         "radius": "700",
