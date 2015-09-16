@@ -33,7 +33,7 @@ describe('YahooMapService', () => {
 
             expect(result.mapId).to.equal('map');
             expect(result.data.locationText).to.equal('line1,line2,line3');
-            expect(result.data.locationLink).to.equal('http://gws2.maps.yahoo.com/MapImage/' +
+            expect(result.data.locationLink).to.equal('http://gws2.maps.yahoo.com/MapImage' +
                 '?appid=yahoo&imw=300&imh=500&imi=1-h-gws-2x&radius=700&zoom=10&q=line1%2Cline2%2Cline3');
         });
     });
