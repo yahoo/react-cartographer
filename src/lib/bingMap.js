@@ -18,7 +18,6 @@ const _ = {
 
 import {bing as config} from '../../config/config.json';
 import utils from 'url';
-import encode from 'urlencode';
 
 export default class BingMapService {
     get name() {
@@ -49,7 +48,7 @@ export default class BingMapService {
         url = utils.format({
             protocol: config.protocol,
             hostname: config.host,
-            pathname: config.path + encode(location),
+            pathname: config.path + encodeURIComponent(location),
             query: _.pick({
                 mapSize: [params.width, params.height].join(','),
                 key: params.providerKey,

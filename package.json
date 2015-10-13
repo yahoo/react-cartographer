@@ -21,7 +21,6 @@
   "dependencies": {
     "url": "^0.10.0",
     "lodash": "^3.8.0",
-    "urlencode": "^1.0.0",
     "react": "^0.13"
   },
   "devDependencies": {
