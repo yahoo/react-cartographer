@@ -25,8 +25,7 @@ export default class Map extends React.Component {
         height: React.PropTypes.number.isRequired,
         width: React.PropTypes.number.isRequired,
         zoom: React.PropTypes.number,
-        useBackgroundImageStyle: React.PropTypes.bool,
-        backgroundPosition: React.PropTypes.string
+        useBackgroundImageStyle: React.PropTypes.bool
     }
 
     static defaultProps = {
@@ -35,8 +34,7 @@ export default class Map extends React.Component {
         height: 270,
         width: 580,
         zoom: 10,
-        useBackgroundImageStyle: false,
-        backgroundPosition: 'center'
+        useBackgroundImageStyle: false
     }
 
     getLocation () {
