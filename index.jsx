@@ -85,5 +85,19 @@ React.render(
             width={580}
         />
         <br />
+
+        Example of using a Bing Map as a backgroud image (Latitude: 51.477222, Longitude: 0)
+        <Map
+            provider='bing'
+            providerKey='AkcOTa579AYlvB3OsS4N5OpCPsxG2rUiVQibQEwneylAPIuyhAim3paIGLZp7ukc'
+            mapId='bing'
+            latitude={51.477222}
+            longitude={0}
+            zoom={15}
+            height={270}
+            width={580}
+            useBackgroundImageStyle={true}
+        />
+        <br />
     </div>,
     document.getElementById('content'));
