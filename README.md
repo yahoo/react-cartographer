@@ -26,13 +26,14 @@ $ npm install --save react-cartographer
 * Latitude and Longitude override (address, city, state, country)
 * Flexible image size, simply provide height & width
 * Static zoom ability
-* Updated for React 0.13
+* Updated for React 0.14
 * Ability to use Yahoo / Google / Bing as a provider
 * Marker Pins
+* background image option via prop for all map providers
 
 ## Usage
 ```js
-var MapComponent    = require('react-cartographer/components/Map.jsx');
+var MapComponent    = require('react-cartographer/lib/components/Map');
 ```
 
 Map of Yahoo Location using google
@@ -107,7 +108,7 @@ Map of Apple Location using yahoo (latitude, longitude)
     />
 ```
 Map of Apple Location using bing (latitude, longitude)
-```js        
+```js
 <MapComponent
     provider='bing'
     providerKey='{your app id}'
@@ -119,6 +120,20 @@ Map of Apple Location using bing (latitude, longitude)
     width={580}
     />
 ```
+Example of using a Bing Map as a background image (Latitude: 51.477222, Longitude: 0)
+```js
+<MapComponent
+    provider='bing'
+    providerKey='{your app id}'
+    mapId='bing'
+    latitude={51.477222}
+    longitude={0}
+    zoom={15}
+    height={270}
+    useBackgroundImageStyle={true}
+/>
+```
+
 
 ## Development
 ```sh
@@ -152,8 +167,9 @@ $ npm run start
 | latitude | latitude | Latitude location |
 | longitude | longitude | Longitude location |
 | height | height of map |  270px |
-| width | width of map | 580px | 
+| width | width of map | 580px |
 | zoom | zoom level of the map location |  10 |
+| useBackgroundImageStyle | get the map as a background image | false
 
 ## License
 
