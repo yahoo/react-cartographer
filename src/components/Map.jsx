@@ -5,13 +5,13 @@
 
 'use strict';
 
-import React from 'react';
+import React, { Component } from 'react';
 import MapLocationFactory from '../lib/mapLocationFactory';
 
 // Factory
 const factory = new MapLocationFactory();
 
-export default class Map extends React.Component {
+export default class Map extends Component {
     static propTypes = {
         providerKey: React.PropTypes.string.isRequired,
         provider: React.PropTypes.oneOf(['yahoo', 'google', 'bing']),
