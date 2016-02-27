@@ -1,6 +1,6 @@
 {
   "name": "react-cartographer",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Generic React component for displaying static maps using Yahoo, Google or Bing as a map provider.",
   "author": "Edmond Chow <echow23@yahoo-inc.com>",
   "repository": {
@@ -13,22 +13,27 @@
     "start": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8090",
-    "test": "jenkins-mocha --compilers js:babel/register tests/unit/*",
-    "devtest": "mocha --compilers js:babel/register tests/unit/* --reporter nyan",
+    "test": "jenkins-mocha --compilers js:babel-core/register tests/unit/*",
+    "devtest": "mocha --compilers js:babel-core/register tests/unit/* --reporter nyan",
     "cover": "node node_modules/istanbul/lib/cli.js cover --dir artifacts -- ./node_modules/mocha/bin/_mocha tests/ --recursive --reporter spec",
     "prepublish": "npm run compile"
   },
   "dependencies": {
     "url": "^0.10.0",
     "lodash": "^3.8.0",
-    "react": "^0.14"
+    "react": "^0.14",
+    "react-dom": "^0.14"
   },
   "devDependencies": {
-    "babel": "^5.8.19",
-    "babel-loader": "^5.3",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.11",
-    "react": "<=0.14.x",
     "debug": "^2.0.0",
     "jenkins-mocha": "^2.2",
     "mocha": "^2.2.5",
