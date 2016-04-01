@@ -12,8 +12,8 @@
 
 const _ = {
     // Collection
-    pick: require('lodash/object/pick'),
-    identity: require('lodash/utility/identity')
+    pick: require('lodash/pickBy'),
+    identity: require('lodash/identity')
 };
 
 import {bing as config} from '../../config/config.json';
