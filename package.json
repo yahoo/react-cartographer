@@ -19,8 +19,10 @@
     "prepublish": "npm run compile"
   },
   "dependencies": {
-    "lodash": "^4.0.0",
-    "react": "^0.14"
+    "lodash": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
     "babel": "^5.8.19",
@@ -43,7 +45,7 @@
     "json-loader": "^0.5.1",
     "mocha": "^2.2.5",
     "nodemon": "^1.2.1",
-    "react": "<=0.14.x",
+    "react": "^15.0.0",
     "webpack": "^1.4.12",
     "webpack-dev-server": "^1.6.5"
   },
