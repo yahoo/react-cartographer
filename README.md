@@ -3,6 +3,8 @@
 react-cartographer 
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yahoo/react-cartographer.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/react-cartographer.svg)](http://badge.fury.io/js/react-cartographer)
 [![Build Status](https://travis-ci.org/yahoo/react-cartographer.svg?branch=master)](https://travis-ci.org/yahoo/react-cartographer)
 [![Dependency Status](https://david-dm.org/yahoo/react-cartographer.svg)](https://david-dm.org/yahoo/react-cartographer)
