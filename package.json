@@ -13,20 +13,21 @@
     "start": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8090",
-    "test": "jenkins-mocha --compilers js:babel/register tests/unit/*",
-    "devtest": "mocha --compilers js:babel/register tests/unit/* --reporter nyan",
+    "test": "jenkins-mocha --compilers js:babel-core/register tests/unit/*",
+    "devtest": "mocha --compilers js:babel-core/register tests/unit/* --reporter nyan",
     "cover": "node node_modules/istanbul/lib/cli.js cover --dir artifacts -- ./node_modules/mocha/bin/_mocha tests/ --recursive --reporter spec",
     "prepublish": "npm run compile"
   },
   "dependencies": {
-    "lodash": "^4.0.0"
-  },
-  "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0"
+    "lodash": "^4.0.0",
+    "react": "15"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.23.0",
     "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
     "chai": "^3.2.0",
     "coveralls": "^2.11.2",
     "debug": "^2.0.0",
@@ -45,7 +46,7 @@
     "json-loader": "^0.5.1",
     "mocha": "^3.4.1",
     "nodemon": "^1.2.1",
-    "react": "^15.0.0",
+    "prop-types": "^15.5.10",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   },

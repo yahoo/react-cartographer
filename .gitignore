@@ -7,3 +7,4 @@ shelljs_*
 build
 components-dist/
 lib/
+.nyc_output/

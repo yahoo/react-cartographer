@@ -2,41 +2,14 @@
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
-
-'use strict';
-
 import React from 'react';
+import PropTypes from 'prop-types'
 import MapLocationFactory from '../lib/mapLocationFactory';
 
 // Factory
 const factory = new MapLocationFactory();
 
 export default class Map extends React.Component {
-    static propTypes = {
-        providerKey: React.PropTypes.string.isRequired,
-        provider: React.PropTypes.oneOf(['yahoo', 'google', 'bing']),
-        mapId: React.PropTypes.string.isRequired,
-        addressLine1: React.PropTypes.string,
-        city: React.PropTypes.string,
-        state: React.PropTypes.string,
-        country: React.PropTypes.string,
-        longitude: React.PropTypes.number,
-        latitude: React.PropTypes.number,
-        height: React.PropTypes.number.isRequired,
-        width: React.PropTypes.number.isRequired,
-        zoom: React.PropTypes.number,
-        useBackgroundImageStyle: React.PropTypes.bool
-    }
-
-    static defaultProps = {
-        provider: 'yahoo',
-        mapId: 'map',
-        height: 270,
-        width: 580,
-        zoom: 10,
-        useBackgroundImageStyle: false
-    }
-
     getLocation () {
         return factory.getMap({
             providerKey: this.props.providerKey,
@@ -87,4 +60,29 @@ export default class Map extends React.Component {
             </div>
         );
     }
+};
+
+Map.propTypes = {
+    providerKey: PropTypes.string.isRequired,
+    provider: PropTypes.oneOf(['yahoo', 'google', 'bing']),
+    mapId: PropTypes.string.isRequired,
+    addressLine1: PropTypes.string,
+    city: PropTypes.string,
+    state: PropTypes.string,
+    country: PropTypes.string,
+    longitude: PropTypes.number,
+    latitude: PropTypes.number,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+    zoom: PropTypes.number,
+    useBackgroundImageStyle: PropTypes.bool
+};
+
+Map.defaultProps = {
+    provider: 'yahoo',
+    mapId: 'map',
+    height: 270,
+    width: 580,
+    zoom: 10,
+    useBackgroundImageStyle: false
 };
