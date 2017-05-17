@@ -57,7 +57,6 @@ module.exports = function (grunt) {
                 },
                 plugins: [
                     new webpack.NormalModuleReplacementPlugin(/^react?$/, require.resolve('react')),
-                    new webpack.NormalModuleReplacementPlugin(/^react(\/addons)?$/, require.resolve('react/addons'))
                 ],
                 stats: {
                     colors: true

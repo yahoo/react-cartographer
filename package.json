@@ -47,6 +47,7 @@
     "json-loader": "0",
     "mocha": "3",
     "nodemon": "1",
+    "react-dom": "15",
     "webpack": "2",
     "webpack-dev-server": "2"
   },

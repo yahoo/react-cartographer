@@ -5,9 +5,10 @@
 'use strict';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Map from './src/components/Map';
 
-React.render(
+ReactDOM.render(
     <div>
         Example of using a Google Map (Location: 1600 Amphitheatre Parkway, Mountain View CA United States)
         <Map    provider='google'
