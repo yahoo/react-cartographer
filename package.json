@@ -1,6 +1,6 @@
 {
   "name": "react-cartographer",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Generic React component for displaying static maps using Yahoo, Google or Bing as a map provider.",
   "author": "Edmond Chow <echow23@yahoo-inc.com>",
   "repository": {
