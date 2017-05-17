@@ -9,58 +9,52 @@ import MapLocationFactory from '../lib/mapLocationFactory';
 // Factory
 const factory = new MapLocationFactory();
 
-export default class Map extends React.Component {
-    getLocation () {
-        return factory.getMap({
-            providerKey: this.props.providerKey,
-            provider: this.props.provider,
-            mapId: this.props.mapId,
-            line1: this.props.addressLine1,
-            line2: [this.props.city, this.props.state].join(','),
-            line3: this.props.country,
-            longitude: this.props.longitude,
-            latitude: this.props.latitude,
-            height: this.props.height,
-            width: this.props.width,
-            zoom: this.props.zoom
-        });
+export default function Map (props) {
+    const location = factory.getMap({
+        providerKey: props.providerKey,
+        provider: props.provider,
+        mapId: props.mapId,
+        line1: props.addressLine1,
+        line2: [props.city, props.state].join(','),
+        line3: props.country,
+        longitude: props.longitude,
+        latitude: props.latitude,
+        height: props.height,
+        width: props.width,
+        zoom: props.zoom
+    });
+    let locationText;
+    let locationLink;
+    let style;
+
+    if (!location.data || !location.data.locationLink) {
+        return null;
     }
 
-    render () {
-        const location = this.getLocation();
-        let locationText;
-        let locationLink;
-        let style;
+    locationText = location.data.locationText;
+    locationLink = location.data.locationLink;
+    style = {
+        width: props.width,
+        height: props.height
+    };
 
-        if (!location.data || !location.data.locationLink) {
-            return null;
-        }
-
-        locationText = location.data.locationText;
-        locationLink = location.data.locationLink;
+    if (props.useBackgroundImageStyle) {
         style = {
-            width: this.props.width,
-            height: this.props.height
+            width: '100%',
+            height: props.height,
+            background: `url(${locationLink}) no-repeat`
         };
-
-        if (this.props.useBackgroundImageStyle) {
-            style = {
-                width: '100%',
-                height: this.props.height,
-                background: `url(${locationLink}) no-repeat`
-            };
-        }
-
-        return (
-            <div style={style} className="cartographer-container">
-                {
-                    !this.props.useBackgroundImageStyle ?
-                    <img src={locationLink} alt={locationText} title={locationText} /> : null
-                }
-            </div>
-        );
     }
-};
+
+    return (
+        <div style={style} className="cartographer-container">
+            {
+                !props.useBackgroundImageStyle ?
+                <img src={locationLink} alt={locationText} title={locationText} /> : null
+            }
+        </div>
+    );
+}
 
 Map.propTypes = {
     providerKey: PropTypes.string.isRequired,
