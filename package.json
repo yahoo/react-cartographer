@@ -29,7 +29,7 @@
     "babel-loader": "7",
     "babel-preset-env": "1",
     "babel-preset-react": "6",
-    "chai": "3",
+    "chai": "^4.0.2",
     "coveralls": "2",
     "debug": "2",
     "grunt": "1",
