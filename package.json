@@ -33,7 +33,7 @@
     "coveralls": "2",
     "debug": "2",
     "grunt": "1",
-    "grunt-babel": "6",
+    "grunt-babel": "^7.0.0",
     "grunt-cli": "1",
     "grunt-concurrent": "2",
     "grunt-contrib-clean": "1",
