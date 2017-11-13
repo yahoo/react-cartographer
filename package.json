@@ -1,6 +1,6 @@
 {
   "name": "react-cartographer",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Generic React component for displaying static maps using Yahoo, Google or Bing as a map provider.",
   "author": "Edmond Chow <echow23@yahoo-inc.com>",
   "repository": {
@@ -13,15 +13,15 @@
     "start": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8090",
-    "test": "jenkins-mocha --compilers js:babel-core/register tests/unit/*",
+    "test": "jenkins-mocha --require babel-core/register tests/unit/*",
     "devtest": "mocha --compilers js:babel-core/register tests/unit/* --reporter nyan",
     "cover": "node node_modules/istanbul/lib/cli.js cover --dir artifacts -- ./node_modules/mocha/bin/_mocha tests/ --recursive --reporter spec",
     "prepublish": "npm run compile"
   },
   "dependencies": {
     "lodash": "4",
-    "react": "15",
-    "prop-types": "15"
+    "prop-types": "15",
+    "react": "^16.1.0"
   },
   "devDependencies": {
     "babel-cli": "6",
@@ -47,7 +47,7 @@
     "json-loader": "0",
     "mocha": "^4.0.0",
     "nodemon": "1",
-    "react-dom": "15",
+    "react-dom": "^16.1.0",
     "webpack": "^3.1.0",
     "webpack-dev-server": "2"
   },
