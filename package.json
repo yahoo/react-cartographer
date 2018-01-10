@@ -40,7 +40,7 @@
     "grunt-contrib-copy": "1",
     "grunt-nodemon": "0.4",
     "grunt-webpack": "3",
-    "http-server": "0.10",
+    "http-server": "~0.11.0",
     "istanbul": "0.4",
     "jenkins-mocha": "^6.0.0",
     "jshint": "2",
