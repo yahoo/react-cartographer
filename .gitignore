@@ -3,6 +3,7 @@
 *.log
 shelljs_*
 .idea
+.vscode
 .DS_Store
 build
 components-dist/
