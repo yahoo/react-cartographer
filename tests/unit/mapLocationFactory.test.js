@@ -48,6 +48,23 @@ describe('MapLocationFactory', () => {
                 '&markers=color%3Apurple%7Clabel%3A1%7C2%2C3');
         });
 
+        it('should return the correct locationLink and locationText for Google without any markers', () => {
+            const result = factory.getMap({
+                provider: 'google',
+                mapId: 'mapId',
+                line1: 'line1',
+                line2: 'line2',
+                line3: 'line3',
+                width: 200,
+                height: 300,
+                withoutMarker: true,
+            });
+
+            expect(result.data.locationText).to.equal('line1,line2,line3');
+            expect(result.data.locationLink).to.equal('https://maps.googleapis.com/maps/api/staticmap' +
+                '?center=line1%2Cline2%2Cline3&size=200x300&mapType=roadmap');
+        });
+
         it('should return the correct locationLink and locationText for Yahoo', () => {
             const result = factory.getMap({
                 provider: 'yahoo',
@@ -111,12 +128,30 @@ describe('MapLocationFactory', () => {
                 zoom: 11,
                 providerKey: 'key',
                 width: 200,
-                height: 300
+                height: 300,
             });
 
             expect(result.data.locationText).to.equal('2,3');
             expect(result.data.locationLink).to.equal('https://dev.virtualearth.net/REST/V1/Imagery/Map/' +
                 'Road/2%2C3%2F11?mapSize=200%2C300&key=key&pushpin=2%2C3');
+        });
+
+        it('should return the correct locationLink and locationText for Bing without any markers', () => {
+            const result = factory.getMap({
+                provider: 'bing',
+                mapId: 'map',
+                latitude: 2,
+                longitude: 3,
+                zoom: 11,
+                providerKey: 'key',
+                width: 200,
+                height: 300,
+                withoutMarker: true,                
+            });
+
+            expect(result.data.locationText).to.equal('2,3');
+            expect(result.data.locationLink).to.equal('https://dev.virtualearth.net/REST/V1/Imagery/Map/' +
+                'Road/2%2C3%2F11?mapSize=200%2C300&key=key');
         });
     });
 });
