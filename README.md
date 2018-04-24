@@ -135,6 +135,20 @@ Example of using a Bing Map as a background image (Latitude: 51.477222, Longitud
     useBackgroundImageStyle={true}
 />
 ```
+Example of using a Google Map without marker
+```js
+<MapComponent
+    provider='google'
+    providerKey='{your app key}'
+    mapId='map'
+    latitude={51.477222}
+    longitude={0}
+    zoom={15}
+    height={270}
+    width={580}
+    withoutMarker
+    />
+```
 
 
 ## Development
