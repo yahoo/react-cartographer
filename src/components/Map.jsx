@@ -21,7 +21,8 @@ export default function Map (props) {
         latitude: props.latitude,
         height: props.height,
         width: props.width,
-        zoom: props.zoom
+        zoom: props.zoom,
+        withoutMarker: props.withoutMarker
     });
     let locationText;
     let locationLink;
@@ -69,7 +70,8 @@ Map.propTypes = {
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
     zoom: PropTypes.number,
-    useBackgroundImageStyle: PropTypes.bool
+    useBackgroundImageStyle: PropTypes.bool,
+    withoutMarker: PropTypes.bool
 };
 
 Map.defaultProps = {
@@ -78,5 +80,6 @@ Map.defaultProps = {
     height: 270,
     width: 580,
     zoom: 10,
-    useBackgroundImageStyle: false
+    useBackgroundImageStyle: false,
+    withoutMarker: false
 };

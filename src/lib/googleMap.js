@@ -48,7 +48,7 @@ export default class GoogleMapService {
                 center: location,
                 size: [params.width, params.height].join('x'),
                 mapType: config.mapType,
-                markers: [config.markerColor, config.markerLabel, location].join('|'),
+                markers: params.withoutMarker ? undefined : [config.markerColor, config.markerLabel, location].join('|'),
                 zoom: params.zoom,
                 key: params.providerKey
             }, _.identity)

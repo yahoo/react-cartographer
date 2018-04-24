@@ -52,7 +52,7 @@ export default class BingMapService {
             query: _.pick({
                 mapSize: [params.width, params.height].join(','),
                 key: params.providerKey,
-                pushpin: pushpin
+                pushpin: params.withoutMarker ? undefined : pushpin
             }, _.identity)
         });
 
