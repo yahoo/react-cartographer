@@ -2,6 +2,7 @@ sudo: false
 language: node_js
 node_js:
   - "6"
+  - "10"
 after_success:
   - "npm run devtest"
   - "npm run cover"
