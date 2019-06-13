@@ -13,7 +13,7 @@
     "start": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8090",
-    "test": "jenkins-mocha --require babel-core/register tests/unit/*",
+    "test": "jenkins-mocha --require @babel/register tests/unit/*",
     "devtest": "mocha --compilers js:babel-core/register tests/unit/* --reporter nyan",
     "cover": "node node_modules/istanbul/lib/cli.js cover --dir artifacts -- ./node_modules/mocha/bin/_mocha tests/ --recursive --reporter spec",
     "prepublish": "npm run compile"
@@ -24,11 +24,11 @@
     "react": "^16.8.1"
   },
   "devDependencies": {
-    "babel-cli": "6",
-    "babel-core": "6",
-    "babel-loader": "^8.0.0",
-    "babel-preset-env": "1",
-    "babel-preset-react": "6",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
     "chai": "^4.0.2",
     "coveralls": "^3.0.0",
     "debug": "^4.0.0",
