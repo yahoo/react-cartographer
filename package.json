@@ -49,7 +49,7 @@
     "nodemon": "1",
     "react-dom": "^16.8.1",
     "webpack": "^4.0.0",
-    "webpack-dev-server": "^3.0.0"
+    "webpack-dev-server": "^3.7.2"
   },
   "precommit": [
     "lint",
