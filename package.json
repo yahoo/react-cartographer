@@ -19,7 +19,7 @@
     "prepublish": "npm run compile"
   },
   "dependencies": {
-    "lodash": "4",
+    "lodash": "^4.17.15",
     "prop-types": "15",
     "react": "^16.8.1"
   },
