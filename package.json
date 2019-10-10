@@ -27,7 +27,7 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.6.3",
     "@babel/register": "^7.4.4",
     "chai": "^4.0.2",
     "coveralls": "^3.0.0",
