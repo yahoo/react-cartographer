@@ -43,7 +43,7 @@
     "http-server": "~0.11.0",
     "istanbul": "0.4",
     "jenkins-mocha": "^8.0.0",
-    "jshint": "2",
+    "jshint": "2.10.2",
     "json-loader": "0",
     "mocha": "^6.0.0",
     "nodemon": "1",
