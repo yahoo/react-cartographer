@@ -30,7 +30,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
     "chai": "^4.0.2",
-    "coveralls": "^3.0.0",
+    "coveralls": "^3.0.8",
     "debug": "^4.0.0",
     "grunt": "1",
     "grunt-babel": "^8.0.0",
